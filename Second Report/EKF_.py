@@ -21,7 +21,7 @@ z = []
 
 x0 = 1000
 r = 200
-a = 0.75
+a = 0.90
 p0 = 1
 
 x.append(x0)
@@ -29,7 +29,7 @@ p.append(p0)
 g.append(0)
 
 for i in range(9):
-    x.append(x[i] * 0.75)
+    x.append(x[i] * a)
 
 for i in range(len(x)):
     z.append(x[i] + np.random.uniform(-r, r, None))
