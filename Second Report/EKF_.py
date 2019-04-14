@@ -62,6 +62,3 @@ for column in dataFrame.drop('x', axis=1):
 plt.legend(loc=1, ncol=4)
 plt.xlabel("Time")
 plt.show()
-
-
-
