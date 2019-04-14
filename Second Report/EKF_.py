@@ -26,24 +26,30 @@ p0 = 1
 
 x.append(x0)
 p.append(p0)
+g.append(0)
 
 for i in range(9):
     x.append(x[i] * 0.75)
 
 for i in range(len(x)):
-    z.append(x[i] + np.random.uniform(-200.0, 200.0, None))
+    z.append(x[i] + np.random.uniform(-r, r, None))
 
 xPred.append(z[0])
+
+##### TEMP
+x = [1000, 750, 563, 422, 316, 237, 178, 133, 100, 75]
+z = [899, 687, 624, 425, 325, 152, 225, 300, 86, 100]
+xPred[0] = z[0]
 
 for i in range(1, len(z)):
     # Predict
     xPred.append(a * xPred[i - 1])
-    p.append(a * p[0] * a)
+    p.append(a * p[i-1] * a)
 
     # Update
     g.append(p[i - 1] / (p[i - 1] + r))
-    xPred[i] = xPred[i] + g[i - 1] * (z[i] - xPred[i])
-    p[i] = (1 - g[i - 1]) * p[i]
+    xPred[i] = xPred[i] + g[i] * (z[i] - xPred[i])
+    p[i] = (1 - g[i]) * p[i]
 
 print(p)
 print(xPred)
