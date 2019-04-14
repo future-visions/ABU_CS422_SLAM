@@ -36,11 +36,6 @@ for i in range(len(x)):
 
 xPred.append(z[0])
 
-##### TEMP
-x = [1000, 750, 563, 422, 316, 237, 178, 133, 100, 75]
-z = [899, 687, 624, 425, 325, 152, 225, 300, 86, 100]
-xPred[0] = z[0]
-
 for i in range(1, len(z)):
     # Predict
     xPred.append(a * xPred[i - 1])
